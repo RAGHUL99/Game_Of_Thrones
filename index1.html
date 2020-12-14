@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>	Game Of Thrones</title>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+<script src="https://code.jquery.com/jquery-1.8.3.js"></script>
+<script src="https://code.jquery.com/ui/1.10.0/jquery-ui.js"></script>
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/redmond/jquery-ui.css" />
+<script>
+$(document).ready(function() {
+
+$( "#startdate,#enddate" ).datepicker({
+changeMonth: true,
+changeYear: true,
+firstDay: 1,
+dateFormat: 'dd/mm/yy',
+})
+
+$( "#startdate" ).datepicker({ dateFormat: 'dd-mm-yy' });
+$( "#enddate" ).datepicker({ dateFormat: 'dd-mm-yy' });
+
+$('#enddate').change(function() {
+var start = $('#startdate').datepicker('getDate');
+var end   = $('#enddate').datepicker('getDate');
+
+if (start<end) {
+var days   = (end - start)/1000/60/60/24;
+$('#days').val(days);
+}
+else {
+alert ("You are Not eligible to join a clan!");
+$('#startdate').val("");
+$('#enddate').val("");
+$('#days').val("");
+}
+}); //end change function
+}); //end ready
+</script>
+
+
+
+
+  <link rel="stylesheet" href="style.css">
+
+	<script src="https://kit.fontawesome.com/fe48c47a95.js" crossorigin="anonymous"></script>
+
+<style>
+
+p{
+	font-family:arial;
+}
+
+			form {
+				font-family: comic sans ms;
+                width: 800px;
+				padding: 20px;
+				box-sizing: border-box;
+				margin: 0 auto;
+				background:rgb(167, 125, 125);
+			}
+				.form-group {
+				margin: 25px;
+				}
+				.form-group input {
+					display: block;   
+					width: 100%;	
+					padding: 10px;
+					box-sizing: border-box;
+					box-shadow: inset 0 0 10px rgb(66, 60, 60), 0 0 0 purple;
+					outline: none;
+					border: 1px solid gray;
+					margin-top: 5px;
+                    transition: box-shadow 1s;
+                    color: black;	
+					
+				} 
+				.form-group input:focus {
+				box-shadow: inset 	0 0 0 rgb(65, 59, 59), 0 0 10px purple; 	
+				}
+				input[type='submit'] {
+                    font-family: comic sans ms; 
+                    color: black;
+				}
+</style>
+</head>
+<body>
+	<nav>
+		<label class="main">
+			Game of Thrones Recruitment
+		</label>
+		<ul>
+			<li><a href="index1.html">Home</a></li>
+			<li><a class="active" href="index">Register</a></li>
+
+		</ul>
+	</nav>
+
+	<div class= "container-fluid">
+        <form>
+			<h1>Recruitment Form</h1><hr>
+			<div class="form-group">
+				<label for="user-name">Name *</label>
+				<input type="text" id="user-name"  name="user" required placeholder="Enter the username" autofocus>
+			</div>
+			<div class="form-group">
+				<label for="em">E-mail *</label>
+				<input type="email" id="em" required placeholder="Enter the E-mail ID">
+			</div>
+			<div class="form-group">
+				<label for="bd">Birthday</label>
+				<input type="date" id="bd">
+			</div>
+			<div class="form-group">
+				<label for="pos">Position</label>
+				<input list="pos" placeholder="Whats your position" name="Position">
+                                                                        <datalist id="pos">
+                                                                        <option value="knight"> Knight </option>
+                                                                        <option value="soldier"> Soldier</option>
+                                                                        <option value="commander"> Commander</option>
+                                                                        </datalist>
+			</div>
+			<div class="form-group">
+				<label for="em">Webpage</label>
+				<input type="url" id="em"placeholder="Enter the url of the webpage">
+			</div>
+			<div class="form-group">
+				<label for="Clan">Select your clan</label>
+				<input list="Clan" placeholder="Enter your Clan name" name="Clan Name">
+				<datalist id="Clan">
+				<option value="House Lannisters of the Casterly Rocks">House Lannisters of the Casterly Rocks</option>
+				<option value=" House Stark of Winterfell"> House Stark of Winterfell</option>
+				<option value=" House Durrandon of Storm's End">  House Durrandon of Storm's End</option>
+				<option value=" House Gardener of Highgarden">House Gardener of Highgarden</option>
+				<option value=" House Arryn of the Eyrie"> House Arryn of the Eyrie</option>
+				<option value="House Martell of Sunspear"> House Martell of Sunspear</option>
+				<option value="The Targaryens of the Dragonstone">The Targaryens of the Dragonstone</option>
+				</datalist>
+			</div>
+
+			<div class="form-group">
+				<label>Subscription Valid from</label>
+				<input type="text" id="startdate">
+			</div>
+
+			<div class="form-group">
+				<label >Valid Till</label>
+				<input type="Text" id="enddate">
+            </div>
+            
+            <div class="form-group">
+				<label >No. of Days of Subscription</label>
+				<input type="Text" id="days">
+			</div>
+
+
+			<div class="form-group">
+				<input type="submit" value="Submit">
+			</div>
+		</form>
+
+    </div>
+
+	<footer class="page-footer font-large special-color-dark pt-4">
+
+<div class="container">
+
+	<ul class="list-unstyled list-inline text-center">
+		<li class="list-inline-item">
+			<a class="btn-floating btn-fb mx-1" href="https://en.wikipedia.org/wiki/Game_of_Thrones">
+				<i class="fab fa-wikipedia-w fa-4x"> </i>
+			</a>
+		</li>
+
+	</ul>
+</div>
+<div class="footer-copyright text-center py-3">
+		Copyright ©️ Raghul Stark of Winterfell 2020
+	</div>
+
+</footer>
+</body>
+</html>
